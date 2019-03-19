@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 網站描述文字
+    <meta name='description' content='網站描述文字' /> 
+    FB的標題
+    <meta property="og:title" content="FB的標題" />
+    FB的描述
+    <meta property="og:description" content="FB的描述">
+    website
+    <meta property="og:type" content="website" />
+    FB上的網址
+    <meta property="og:url" content="FB上的網址" />
+    FB的圖片
+    <meta property="og:image" content="FB的圖片" /> -->
+    <!-- apple-touch-icon -->
+    <link rel="apple-touch-icon" sizes="192x192" href="touch-icon.png">
+    <link rel="shortcut icon" href="../AQI/images/air16*16.png" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../AQI/src/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
+    <title>AQI check</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="header">
+            <div class="AQI">
+                <h1 class="big-font-size">空氣品質指標(AQI)</h1>
+                <select class="selectbox">
+                    <option value="0">請選擇地區</option>
+                    <option value="1">Audi</option>
+                    <option value="2">BMW</option>
+                </select>
+            </div>
+            <div class="AQIlv">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="lv1">0～50</th>
+                            <th class="lv2">51～100</th>
+                            <th class="lv3">101～150</th>
+                            <th class="lv4">101～150</th>
+                            <th class="lv5">201～300</th>
+                            <th class="lv6">301～400</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>良好</td>
+                            <td>普通</td>
+                            <td>對敏感族群<br>不健康</td>
+                            <td>對所有族群<br>不健康</td>
+                            <td>非常不健康</td>
+                            <td>危害</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="middle">
+            <div class="title">
+                <h2 class="middle-font-size">高雄市</h2>
+                <div class="dotted"></div>
+                <span class="time">2019-01-24 14:00</span>
+                <span class="time">更新</span>
+            </div>
+            <div class="content">
+                <div class="aside">
+                    <span class="aside-name middle-font-size">前金</span>
+                    <span class="aside-aqi">156</span>
+                    <ul class="aside-list">
+                        <li>
+                            <div>
+                                <span>臭氧</span>
+                                <p>O3 (ppb)</p>
+                            </div>
+                            <p>82</p>
+                        </li>
+                        <li>
+                            <div>
+                                <span>懸浮微粒</span>
+                                <p>PM10 (μg/m³)</p>
+                            </div>
+                            <p>82</p>
+                        </li>
+                        <li>
+                            <div>
+                                <span>細懸浮微粒</span>
+                                <p>PM2.5 (μg/m³)</p>
+                            </div>
+                            <p>82</p>
+                        </li>
+                        <li>
+                            <div>
+                                <span>一氧化碳</span>
+                                <p>CO (ppm)</p>
+                            </div>
+                            <p>82</p>
+                        </li>
+                        <li>
+                            <div>
+                                <span>二氧化硫</span>
+                                <p>SO2 (ppb)</p>
+                            </div>
+                            <p>82</p>
+                        </li>
+                        <li>
+                            <div>
+                                <span>二氧化氮</span>
+                                <p>NO2 (ppb)</p>
+                            </div>
+                            <p>82</p>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="locations">
+                        <li class="locations-list">
+                            <span class="locations-name middle-font-size">前金</span>
+                            <span class="locations-aqi huge-font-size">156</span>
+                        </li>
+                        <li class="locations-list">
+                            <span class="locations-name middle-font-size">復興</span>
+                            <span class="locations-aqi huge-font-size">159</span>
+                        </li>
+                        <li class="locations-list">
+                            <span class="locations-name middle-font-size">楠梓</span>
+                            <span class="locations-aqi huge-font-size">206</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer"></div>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="../AQI/src/lib/jquery/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../AQI/src/js/index.js"></script>
+</body>
+
+</html>
