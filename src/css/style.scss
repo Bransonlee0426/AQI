@@ -117,9 +117,9 @@ body {
     .content {
       display: flex;
       flex-direction: row;
-      justify-content: center;
+      justify-content: start;
       align-items: start;
-
+      margin-left: 75px;
       .aside {
         display: grid;
         grid-template-columns: 187px 157px;
@@ -188,7 +188,7 @@ body {
       }
 
       .locations {
-        cursor: pointer;
+        
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -196,6 +196,7 @@ body {
         max-width: 785px;
 
         .locations-list {
+          cursor: pointer;
           display: flex;
           flex-direction: row;
           border: 3px solid black;
@@ -203,8 +204,9 @@ body {
           line-height: 91px;
           margin-left: 33px;
           margin-bottom: 30px;
-
+          
           .locations-name {
+            
             width: 190px;
             height: 97px;
             border-right: 3px solid black;

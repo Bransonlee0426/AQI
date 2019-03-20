@@ -33,8 +33,9 @@ $(document).ready(function () {
             //     $('#wrap-id').removeClass('available');
             //     $('#footer-id').removeClass('available');
             // }, 500);
-            
+
             dataArray$ = dataArray(response.data);
+            console.log(dataArray$);
             setCountyDate(dataArray$);
         })
 
@@ -73,7 +74,8 @@ $(document).ready(function () {
                 ['PM2.5']: data[i]['PM2.5'],
                 CO: data[i].CO,
                 SO2: data[i].SO2,
-                NO2: data[i].NO2
+                NO2: data[i].NO2,
+                Status: data[i].Status
             }
             array.push(myObj);
         }
@@ -102,12 +104,53 @@ $(document).ready(function () {
         }
     }
     $('.selectbox').on('change', function () {
-        console.log(dataArray$);
+        $('.locations').empty();
         let result = dataArray$.filter((item, index, array) => {
             return item.County === $(this).val() ? true : false;
         });
+        let curdata = result.forEach((item, index, array) => {
 
-        console.log(result);
+            switch (item.Status) {
+                case '良好':
+                    color = 'lv1'
+                    break;
+                case '普通':
+                    color = 'lv2'
+                    break;
+                case '對敏感族群不健康':
+                    color = 'lv3'
+                    break;
+                case '對所有族群不健康':
+                    color = 'lv4'
+                    break;
+                case '非常不健康':
+                    color = 'lv5'
+                    break;
+                case '危害':
+                    color = 'lv6'
+                    break;
+                default:
+                    console.log('數值過低或超標啦！');
+                    break;
+            }
+
+            let locList = '<li class="locations-list">' +
+                '                            <span class="locations-name middle-font-size">' + item.SiteName + '</span>' +
+                '                            <span id="location-id" class="locations-aqi huge-font-size ' + color + '">' + item.AQI + '</span>' +
+                '                        </li>';
+
+            $('.locations').append(locList);
+
+            console.log(color);
+        });
+        $('#o3').text(result[0].O3);
+        $('#pm10').text(result[0].PM10);
+        $('#pm25').text(result[0]['PM2.5']);
+        $('#co').text(result[0].CO);
+        $('#so2').text(result[0].SO2);
+        $('#no2').text(result[0].NO2);
+        $('.aside-aqi').text(result[0].AQI);
+        $('.aside-name').text(result[0].SiteName);
         $('#title-county').text($(this).val());
     });
 

@@ -186,12 +186,13 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
+  margin-left: 75px;
 }
 
 .wrap .middle .content .aside {
@@ -283,7 +284,6 @@ body {
 }
 
 .wrap .middle .content .locations {
-  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -300,6 +300,7 @@ body {
 }
 
 .wrap .middle .content .locations .locations-list {
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
