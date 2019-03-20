@@ -33,26 +33,23 @@ $(document).ready(function () {
             //     $('#wrap-id').removeClass('available');
             //     $('#footer-id').removeClass('available');
             // }, 500);
-
-            //let dataArray$ = dataArray(response.data);
-
-
+            
+            dataArray$ = dataArray(response.data);
+            setCountyDate(dataArray$);
         })
 
         .catch(function (error) {
             console.log('取得資料失敗:' + error);
         });
 
-
-    
     getTime = () => {
         let myTime = new Date();
         let myYear = myTime.getFullYear();
         let myMonth = myTime.getMonth();
-        let myDay =  myTime.getDate();
+        let myDay = myTime.getDate();
         let myHour = myTime.getHours();
-        let myMinutes =myTime.getMinutes();
-        $('#time').text(myYear+'/'+myMonth+'/'+myDay+' '+myHour+':'+myMinutes);
+        let myMinutes = myTime.getMinutes();
+        $('#time').text(myYear + '/' + myMonth + '/' + myDay + ' ' + myHour + ':' + myMinutes);
     }
     getTime();
 
@@ -80,11 +77,38 @@ $(document).ready(function () {
             }
             array.push(myObj);
         }
+
         return array;
     }
 
+    let setCountyDate = (data) => {
+        let allCountyArray = [];
+        let dataLenght = 0;
+        let item;
+        for (item in data) {
+            if (data.hasOwnProperty(item)) {
+                dataLenght++;
+            }
+        }
+        for (let i = 0; i < dataLenght; i++) {
+            allCountyArray.push(data[i].County);
+            //$('.selectbox').append('<option value=' + +'>' + +'</option>');
+        }
+        let countyArray = allCountyArray.filter(function (item, index, arr) {
+            return arr.indexOf(item) === index;
+        });
+        for (let i = 0; i < countyArray.length; i++) {
+            $('.selectbox').append('<option value=' + countyArray[i] + '>' + countyArray[i] + '</option>');
+        }
+    }
+    $('.selectbox').on('change', function () {
+        console.log(dataArray$);
+        let result = dataArray$.filter((item, index, array) => {
+            return item.County === $(this).val() ? true : false;
+        });
 
-
-
+        console.log(result);
+        $('#title-county').text($(this).val());
+    });
 
 });
