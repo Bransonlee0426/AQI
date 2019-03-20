@@ -27,14 +27,17 @@
 </head>
 
 <body>
-    <div class="wrap">
+    <!-- <div id="load-id" class="load">
+        <h2>資料讀取中...</h2>
+        <div class="loader">Loading...</div>
+    </div> -->
+    <div id="wrap-id" class="wrap">
         <div class="header">
             <div class="AQI">
-                <h1 class="big-font-size">空氣品質指標(AQI)</h1>
+                <h1 id="aqii" class="big-font-size">空氣品質指標(AQI)</h1>
                 <select class="selectbox">
                     <option value="0">請選擇地區</option>
-                    <option value="1">Audi</option>
-                    <option value="2">BMW</option>
+                    
                 </select>
             </div>
             <div class="AQIlv">
@@ -66,12 +69,12 @@
             <div class="title">
                 <h2 class="middle-font-size">高雄市</h2>
                 <div class="dotted"></div>
-                <span class="time">2019-01-24 14:00</span>
-                <span class="time">更新</span>
+                <span id="time">2019-01-24 14:00</span>
+                <span>更新</span>
             </div>
             <div class="content">
                 <div class="aside">
-                    <span class="aside-name middle-font-size">前金</span>
+                    <span class="aside-name middle-font-size">前金前金</span>
                     <span class="aside-aqi">156</span>
                     <ul class="aside-list">
                         <li>
@@ -121,7 +124,7 @@
                 <div>
                     <ul class="locations">
                         <li class="locations-list">
-                            <span class="locations-name middle-font-size">前金</span>
+                            <span class="locations-name middle-font-size">前金前金</span>
                             <span class="locations-aqi huge-font-size">156</span>
                         </li>
                         <li class="locations-list">
@@ -136,7 +139,11 @@
                 </div>
             </div>
         </div>
-        <div class="footer"></div>
+
+    </div>
+    <div id="footer-id" class="footer">
+        <span>資料來源：行政院環境保護署</span>
+        <div>Copyright © 2019 HexSchool. All rights reserved.</div>
     </div>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

@@ -26,13 +26,65 @@ $(document).ready(function () {
             url: apiUrl,
         })
         .then(function (response) {
-            console.log(response.data);
-            
+
+            // setTimeout(() => {
+            //     $('#load-id').addClass('available');
+            //     $('body').css('background-color', '#f0f0f0');
+            //     $('#wrap-id').removeClass('available');
+            //     $('#footer-id').removeClass('available');
+            // }, 500);
+
+            //let dataArray$ = dataArray(response.data);
+
+
         })
+
         .catch(function (error) {
-          
             console.log('取得資料失敗:' + error);
         });
+
+
+    
+    getTime = () => {
+        let myTime = new Date();
+        let myYear = myTime.getFullYear();
+        let myMonth = myTime.getMonth();
+        let myDay =  myTime.getDate();
+        let myHour = myTime.getHours();
+        let myMinutes =myTime.getMinutes();
+        $('#time').text(myYear+'/'+myMonth+'/'+myDay+' '+myHour+':'+myMinutes);
+    }
+    getTime();
+
+    let dataArray = (data) => {
+        //get data's lenght
+        let dataLenght = 0;
+        let array = [];
+        let item;
+        for (item in data) {
+            if (data.hasOwnProperty(item)) {
+                dataLenght++;
+            }
+        }
+        for (let i = 0; i < dataLenght; i++) {
+            let myObj = {
+                County: data[i].County,
+                SiteName: data[i].SiteName,
+                AQI: data[i].AQI,
+                O3: data[i].O3,
+                PM10: data[i].PM10,
+                ['PM2.5']: data[i]['PM2.5'],
+                CO: data[i].CO,
+                SO2: data[i].SO2,
+                NO2: data[i].NO2
+            }
+            array.push(myObj);
+        }
+        return array;
+    }
+
+
+
 
 
 });
