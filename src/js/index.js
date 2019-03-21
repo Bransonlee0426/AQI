@@ -26,17 +26,17 @@ $(document).ready(function () {
             url: apiUrl,
         })
         .then(function (response) {
-
-            // setTimeout(() => {
-            //     $('#load-id').addClass('available');
-            //     $('body').css('background-color', '#f0f0f0');
-            //     $('#wrap-id').removeClass('available');
-            //     $('#footer-id').removeClass('available');
-            // }, 500);
-
             dataArray$ = dataArray(response.data);
-            console.log(dataArray$);
             setCountyDate(dataArray$);
+            
+            setTimeout(() => {
+                $('#load-id').addClass('available');
+                $('body').css('background-color', '#f0f0f0');
+                $('#wrap-id').removeClass('available');
+                $('#footer-id').removeClass('available');
+            }, 500);
+
+            
         })
 
         .catch(function (error) {
@@ -108,6 +108,7 @@ $(document).ready(function () {
         let result = dataArray$.filter((item, index, array) => {
             return item.County === $(this).val() ? true : false;
         });
+
         let curdata = result.forEach((item, index, array) => {
 
             switch (item.Status) {
@@ -138,11 +139,10 @@ $(document).ready(function () {
                 '                            <span class="locations-name middle-font-size">' + item.SiteName + '</span>' +
                 '                            <span id="location-id" class="locations-aqi huge-font-size ' + color + '">' + item.AQI + '</span>' +
                 '                        </li>';
-
             $('.locations').append(locList);
-
-            console.log(color);
         });
+
+        $('.aside-aqi').addClass(color);
         $('#o3').text(result[0].O3);
         $('#pm10').text(result[0].PM10);
         $('#pm25').text(result[0]['PM2.5']);
@@ -152,6 +152,28 @@ $(document).ready(function () {
         $('.aside-aqi').text(result[0].AQI);
         $('.aside-name').text(result[0].SiteName);
         $('#title-county').text($(this).val());
+
+    });
+    //右邊點擊事件
+    $('.locations').on('click', '.locations-list', function () {
+
+        let curname = $(this).find('.locations-name').text(); //點到的地點
+        let result = dataArray$.filter((item, index, array) => {
+            return item.County === $('.selectbox').val() ? true : false;
+        });
+
+        result.forEach((element, index, array) => {
+
+            if (element.SiteName === curname) {
+                $('#o3').text(result[index].O3);
+                $('#pm10').text(result[index].PM10);
+                $('#pm25').text(result[index]['PM2.5']);
+                $('#co').text(result[index].CO);
+                $('#so2').text(result[index].SO2);
+                $('#no2').text(result[index].NO2);
+            }
+        });
+        
     });
 
 });

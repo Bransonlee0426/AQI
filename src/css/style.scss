@@ -49,7 +49,7 @@ body {
 .wrap {
   width: 1280px;
   margin: 0 auto;
-
+  
   .header {
     display: flex;
     flex-direction: row;
@@ -122,7 +122,7 @@ body {
       margin-left: 75px;
       .aside {
         display: grid;
-        grid-template-columns: 187px 157px;
+        grid-template-columns: 187px 155px;
         grid-template-rows: 97px 438px;
         grid-template-areas:
           "header1 header2"
@@ -196,7 +196,7 @@ body {
         max-width: 785px;
 
         .locations-list {
-          cursor: pointer;
+          
           display: flex;
           flex-direction: row;
           border: 3px solid black;
@@ -206,7 +206,7 @@ body {
           margin-bottom: 30px;
           
           .locations-name {
-            
+            cursor: pointer;
             width: 190px;
             height: 97px;
             border-right: 3px solid black;

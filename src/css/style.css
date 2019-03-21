@@ -198,8 +198,8 @@ body {
 .wrap .middle .content .aside {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 187px 157px;
-      grid-template-columns: 187px 157px;
+  -ms-grid-columns: 187px 155px;
+      grid-template-columns: 187px 155px;
   -ms-grid-rows: 97px 438px;
       grid-template-rows: 97px 438px;
       grid-template-areas: "header1 header2" "main main";
@@ -300,7 +300,6 @@ body {
 }
 
 .wrap .middle .content .locations .locations-list {
-  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -316,6 +315,7 @@ body {
 }
 
 .wrap .middle .content .locations .locations-list .locations-name {
+  cursor: pointer;
   width: 190px;
   height: 97px;
   border-right: 3px solid black;
