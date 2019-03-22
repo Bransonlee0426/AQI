@@ -196,7 +196,7 @@ body {
         max-width: 785px;
 
         .locations-list {
-          
+          cursor: pointer;
           display: flex;
           flex-direction: row;
           border: 3px solid black;
@@ -206,7 +206,6 @@ body {
           margin-bottom: 30px;
           
           .locations-name {
-            cursor: pointer;
             width: 190px;
             height: 97px;
             border-right: 3px solid black;
@@ -214,7 +213,9 @@ body {
 
           .locations-aqi {
             width: 160px;
+            
           }
+          
         }
       }
     }

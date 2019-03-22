@@ -300,6 +300,7 @@ body {
 }
 
 .wrap .middle .content .locations .locations-list {
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -315,7 +316,6 @@ body {
 }
 
 .wrap .middle .content .locations .locations-list .locations-name {
-  cursor: pointer;
   width: 190px;
   height: 97px;
   border-right: 3px solid black;
