@@ -1,7 +1,9 @@
 # AQI
 AQI 空氣品質查詢
 
-HTML5+SASS+jQuery
+#HTML5 
+#CSS3 
+#jQuery
 
 1.選擇要查詢的城市
 2.點選想查的區域
