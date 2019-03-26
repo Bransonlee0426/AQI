@@ -7,6 +7,8 @@ AQI 空氣品質查詢
 #javascript SE6
 #axios
 
+＊建議使用 chrome 瀏覽器
+
 API來源為行政院環境保護署
 
 1.選擇要查詢的城市
